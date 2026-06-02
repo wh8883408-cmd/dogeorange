@@ -1,0 +1,299 @@
+/* Doge & Orange — brand tokens (per internal brand spec) */
+:root {
+  --c-primary: #F5B342;
+  --c-primary-dark: #E89A1F;
+  --c-cream: #FFF8E7;
+  --c-white: #FFFFFF;
+  --c-ink: #3D2D1A;
+  --c-ink-light: #6B5235;
+  --c-accent: #E84A3F;
+  --c-border: #F0E6D0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Baloo 2', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--c-ink);
+  background: var(--c-cream);
+}
+
+/* ── Layout ─────────────────────────────────────────────────── */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
+header {
+  background: var(--c-white);
+  border-bottom: 3px solid var(--c-primary);
+  padding: 18px 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--c-ink);
+}
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--c-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 800;
+}
+.brand-name {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+nav a {
+  color: var(--c-ink-light);
+  text-decoration: none;
+  margin-left: 24px;
+  font-weight: 500;
+  font-size: 15px;
+}
+nav a:hover { color: var(--c-primary-dark); }
+
+/* ── Hero ────────────────────────────────────────────────────── */
+.hero {
+  padding: 80px 0 60px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--c-ink);
+  letter-spacing: -1px;
+}
+.hero .tagline {
+  font-size: 22px;
+  color: var(--c-ink-light);
+  margin-bottom: 8px;
+}
+.hero .tagline-th {
+  font-size: 17px;
+  color: var(--c-primary-dark);
+  margin-bottom: 32px;
+}
+.cta-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.btn-primary {
+  background: var(--c-primary);
+  color: var(--c-ink);
+}
+.btn-primary:hover {
+  background: var(--c-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(232, 154, 31, 0.25);
+}
+.btn-outline {
+  border: 2px solid var(--c-ink);
+  color: var(--c-ink);
+}
+.btn-outline:hover { background: var(--c-ink); color: var(--c-cream); }
+
+/* ── Section ────────────────────────────────────────────────── */
+section {
+  padding: 60px 0;
+  border-top: 1px solid var(--c-border);
+}
+section h2 {
+  font-size: 32px;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+section .lead {
+  color: var(--c-ink-light);
+  font-size: 18px;
+  margin-bottom: 32px;
+}
+
+/* ── Product cards ──────────────────────────────────────────── */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+.product {
+  background: var(--c-white);
+  border: 1px solid var(--c-border);
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.2s;
+}
+.product:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+.product .emoji {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+.product h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+.product .th {
+  color: var(--c-primary-dark);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.product p { font-size: 14px; color: var(--c-ink-light); }
+
+/* ── Shop grid ──────────────────────────────────────────────── */
+.shops-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+.shop {
+  background: var(--c-white);
+  border-left: 4px solid var(--c-primary);
+  padding: 16px 20px;
+  border-radius: 4px;
+}
+.shop-name { font-weight: 700; font-size: 16px; }
+.shop-meta { font-size: 13px; color: var(--c-ink-light); margin-top: 4px; }
+.shop-tag {
+  display: inline-block;
+  background: var(--c-primary);
+  color: var(--c-ink);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+
+/* ── Legal page styles ─────────────────────────────────────── */
+.legal {
+  padding: 60px 0;
+}
+.legal h1 {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+.legal .updated {
+  color: var(--c-ink-light);
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+.legal h2 {
+  font-size: 22px;
+  margin-top: 36px;
+  margin-bottom: 12px;
+  color: var(--c-primary-dark);
+}
+.legal h3 {
+  font-size: 18px;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+.legal p { margin-bottom: 16px; }
+.legal ul, .legal ol { margin: 0 0 16px 24px; }
+.legal li { margin-bottom: 8px; }
+.legal code {
+  background: var(--c-cream);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 14px;
+  color: var(--c-accent);
+}
+.legal table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+.legal th, .legal td {
+  border: 1px solid var(--c-border);
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 15px;
+}
+.legal th { background: var(--c-cream); font-weight: 700; }
+
+.contact-card {
+  background: var(--c-white);
+  border: 2px solid var(--c-primary);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+footer {
+  background: var(--c-ink);
+  color: var(--c-cream);
+  padding: 40px 0;
+  margin-top: 60px;
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+footer .footer-brand {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+footer .footer-meta {
+  font-size: 13px;
+  opacity: 0.7;
+  line-height: 1.6;
+}
+footer a {
+  color: var(--c-primary);
+  text-decoration: none;
+}
+footer a:hover { color: var(--c-cream); }
+footer .footer-links a { margin-right: 20px; font-size: 14px; }
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 36px; }
+  .hero .tagline { font-size: 18px; }
+  section h2 { font-size: 26px; }
+  nav { display: none; }
+}
