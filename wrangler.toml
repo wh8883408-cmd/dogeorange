@@ -1,0 +1,7 @@
+name = "dogeorange"
+compatibility_date = "2025-01-01"
+
+# 纯静态站 — 没有 Worker JS 代码,直接把当前目录所有文件当 assets 发布
+[assets]
+directory = "./"
+not_found_handling = "404-page"
