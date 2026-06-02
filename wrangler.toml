@@ -5,5 +5,5 @@ compatibility_date = "2025-01-01"
 [assets]
 directory = "./"
 not_found_handling = "404-page"
-# 关闭 .html 后缀自动剥除,/privacy.html 直接 200 不重定向(reviewer/bot 友好)
-html_handling = "none"
+# 默认 auto-trailing-slash:`/privacy.html` 307 → `/privacy` 200,
+# `/privacy` 直接 200(无 redirect),给 TikTok reviewer 用后者
