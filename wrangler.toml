@@ -5,3 +5,5 @@ compatibility_date = "2025-01-01"
 [assets]
 directory = "./"
 not_found_handling = "404-page"
+# 关闭 .html 后缀自动剥除,/privacy.html 直接 200 不重定向(reviewer/bot 友好)
+html_handling = "none"
